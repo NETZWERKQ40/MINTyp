@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>MINT-Kompass</title>
+  <style>
+    body { font-family: Arial; max-width: 900px; margin: auto; }
+    .question { margin-bottom: 20px; }
+    button { margin-top: 20px; }
+  </style>
+</head>
+<body>
+
+<h1>MINT-Kompass</h1>
+<p>Beantworte die Fragen ehrlich – es gibt kein richtig oder falsch.</p>
+
+<div id="quiz"></div>
+<button onclick="submitQuiz()">Auswerten</button>
+<div id="result"></div>
+
+<script>
+const questions = [
+  {
+    text: "Smart Garden: Was würdest du tun?",
+    answers: [
+      { text: "Berechnen, wie viel Wasser jede Pflanze braucht", type: "M" },
+      { text: "Steuerung programmieren und Sensoren einbinden", type: "I" },
+      { text: "Pflanzenwachstum beobachten", type: "N" },
+      { text: "Gießsystem bauen", type: "T" }
+    ]
+  },
+  {
+    text: "Laborversuch: Welche Aufgabe?",
+    answers: [
+      { text: "Konzentrationen berechnen", type: "M" },
+      { text: "Messwerte digital auswerten", type: "I" },
+      { text: "Experimente durchführen", type: "N" },
+      { text: "Geräte warten", type: "T" }
+    ]
+  },
+  {
+    text: "Robotik: Parcours bewältigen",
+    answers: [
+      { text: "Route planen", type: "M" },
+      { text: "Steuerung programmieren", type: "I" },
+      { text: "Umwelt analysieren", type: "N" },
+      { text: "Roboter bauen", type: "T" }
+    ]
+  },
+  {
+    text: "Umweltprojekt: Wasserqualität",
+    answers: [
+      { text: "Statistiken erstellen", type: "M" },
+      { text: "Messgeräte digital steuern", type: "I" },
+      { text: "Proben untersuchen", type: "N" },
+      { text: "Analyse-System bauen", type: "T" }
+    ]
+  },
+  {
+    text: "Solarenergie optimieren",
+    answers: [
+      { text: "Ertrag berechnen", type: "M" },
+      { text: "Energiemanagement programmieren", type: "I" },
+      { text: "Material testen", type: "N" },
+      { text: "Module installieren", type: "T" }
+    ]
+  },
+  {
+    text: "Tierbeobachtung",
+    answers: [
+      { text: "Zugrouten berechnen", type: "M" },
+      { text: "KI-Monitoring entwickeln", type: "I" },
+      { text: "Verhalten beobachten", type: "N" },
+      { text: "Sensoren einrichten", type: "T" }
+    ]
+  },
+  {
+    text: "Fahrzeugtechnik",
+    answers: [
+      { text: "Fahrdynamik berechnen", type: "M" },
+      { text: "Assistenzsysteme programmieren", type: "I" },
+      { text: "Emissionen analysieren", type: "N" },
+      { text: "Strukturen bauen", type: "T" }
+    ]
+  },
+  {
+    text: "Mikrobiologie",
+    answers: [
+      { text: "Wachstumsraten berechnen", type: "M" },
+      { text: "Daten digital erfassen", type: "I" },
+      { text: "Proben untersuchen", type: "N" },
+      { text: "Geräte warten", type: "T" }
+    ]
+  },
+  {
+    text: "Robotik im Alltag",
+    answers: [
+      { text: "Positionen berechnen", type: "M" },
+      { text: "App entwickeln", type: "I" },
+      { text: "Sensoren testen", type: "N" },
+      { text: "Roboter bauen", type: "T" }
+    ]
+  },
+  {
+    text: "Drohne",
+    answers: [
+      { text: "Flugroute berechnen", type: "M" },
+      { text: "Steuerung programmieren", type: "I" },
+      { text: "Proben analysieren", type: "N" },
+      { text: "Drohne konfigurieren", type: "T" }
+    ]
+  },
+  {
+    text: "Brückenbau",
+    answers: [
+      { text: "Belastung berechnen", type: "M" },
+      { text: "Simulation erstellen", type: "I" },
+      { text: "Material prüfen", type: "N" },
+      { text: "Brücke bauen", type: "T" }
+    ]
+  },
+  {
+    text: "Windrad optimieren",
+    answers: [
+      { text: "Ertrag berechnen", type: "M" },
+      { text: "Steuerung programmieren", type: "I" },
+      { text: "Wetterdaten analysieren", type: "N" },
+      { text: "Mechanik verbessern", type: "T" }
+    ]
+  },
+  {
+    text: "Imkerei-Projekt",
+    answers: [
+      { text: "Erträge auswerten", type: "M" },
+      { text: "KI-Überwachung entwickeln", type: "I" },
+      { text: "Bienen beobachten", type: "N" },
+      { text: "Technik einbauen", type: "T" }
+    ]
+  },
+  {
+    text: "Gartenprojekt",
+    answers: [
+      { text: "Erträge auswerten", type: "M" },
+      { text: "Bewässerung programmieren", type: "I" },
+      { text: "Boden untersuchen", type: "N" },
+      { text: "System bauen", type: "T" }
+    ]
+  },
+  {
+    text: "Astronomie",
+    answers: [
+      { text: "Umlaufbahnen berechnen", type: "M" },
+      { text: "Software entwickeln", type: "I" },
+      { text: "Himmelskörper beobachten", type: "N" },
+      { text: "Teleskop aufbauen", type: "T" }
+    ]
+  },
+  {
+    text: "Elektrizität",
+    answers: [
+      { text: "Verbrauch berechnen", type: "M" },
+      { text: "System programmieren", type: "I" },
+      { text: "Material untersuchen", type: "N" },
+      { text: "Leitungen verlegen", type: "T" }
+    ]
+  },
+  {
+    text: "Medizinische Forschung",
+    answers: [
+      { text: "Statistik berechnen", type: "M" },
+      { text: "Datensystem entwickeln", type: "I" },
+      { text: "Reaktionen untersuchen", type: "N" },
+      { text: "Geräte warten", type: "T" }
+    ]
+  }
+];
+
+function shuffle(array) {
+  return array.sort(() => Math.random() - 0.5);
+}
+
+const selectedQuestions = shuffle([...questions]).slice(0, 30);
+
+const quizDiv = document.getElementById("quiz");
+
+selectedQuestions.forEach((q, index) => {
+  const shuffledAnswers = shuffle([...q.answers]);
+
+  const div = document.createElement("div");
+  div.classList.add("question");
+
+  div.innerHTML = `<p><b>${index + 1}. ${q.text}</b></p>` +
+    shuffledAnswers.map(a => `
+      <label>
+        <input type="radio" name="q${index}" value="${a.type}">
+        ${a.text}
+      </label><br>
+    `).join("");
+
+  quizDiv.appendChild(div);
+});
+
+function submitQuiz() {
+  const counts = { M: 0, I: 0, N: 0, T: 0 };
+
+  selectedQuestions.forEach((q, index) => {
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    if (selected) counts[selected.value]++;
+  });
+
+  const total = selectedQuestions.length;
+
+  const results = Object.entries(counts).map(([key, value]) => ({
+    type: key,
+    percent: ((value / total) * 100).toFixed(1)
+  }));
+
+  results.sort((a, b) => b.percent - a.percent);
+
+  const names = {
+    M: "Mathematik",
+    I: "Informatik",
+    N: "Naturwissenschaft",
+    T: "Technik"
+  };
+
+  document.getElementById("result").innerHTML =
+    "<h2>Dein Ergebnis:</h2>" +
+    results.map(r => `${names[r.type]}: ${r.percent}%`).join("<br>");
+}
+</script>
+
+</body>
+</html>
