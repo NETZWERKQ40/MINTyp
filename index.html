@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MINT-Kompass: Welcher MINTyp bist du?</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-badge">M</div>
+        <div>
+          <h1>MINT-Kompass: Welcher MINTyp bist du?</h1>
+          <p>Entdecke deine Interessen in Mathematik, Informatik, Naturwissenschaften und Technik.</p>
+        </div>
+      </div>
+
+      <div class="icon-row" aria-label="MINT-Bereiche">
+        <div class="icon-card">
+          <span class="icon">∑</span>
+          <span>Mathematik</span>
+        </div>
+        <div class="icon-card">
+          <span class="icon">&lt;/&gt;</span>
+          <span>Informatik</span>
+        </div>
+        <div class="icon-card">
+          <span class="icon">🔬</span>
+          <span>Naturwissenschaft</span>
+        </div>
+        <div class="icon-card">
+          <span class="icon">⚙️</span>
+          <span>Technik</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="content-wrap">
+      <section id="start-screen" class="card screen active">
+        <span class="eyebrow">Online-Quiz</span>
+        <h2>MINT-Kompass: Welcher MINTyp bist du?</h2>
+        <p class="lead">
+          Finde heraus, in welchen MINT-Bereichen (Mathematik, Informatik, Naturwissenschaften, Technik)
+          deine Interessen liegen. Beantworte einfach die Fragen – es gibt kein richtig oder falsch.
+          <br /><br />
+          <strong>Finde deinen MINTyp und entdecke spannende Wege für deine Zukunft!</strong>
+        </p>
+
+        <div class="feature-grid">
+          <div class="feature-box">
+            <strong>30 Zufallsfragen</strong>
+            <p>Bei jedem Durchlauf wird eine neue Auswahl aus dem Fragenpool angezeigt.</p>
+          </div>
+          <div class="feature-box">
+            <strong>Faire Verteilung</strong>
+            <p>Die Antworten werden pro Frage zufällig gemischt.</p>
+          </div>
+          <div class="feature-box">
+            <strong>Direkte Auswertung</strong>
+            <p>Am Ende siehst du dein persönliches MINT-Profil in Prozent.</p>
+          </div>
+        </div>
+
+        <button id="start-btn" class="btn btn-primary">Quiz starten</button>
+      </section>
+
+      <section id="quiz-screen" class="card screen" aria-live="polite">
+        <div class="quiz-top">
+          <div>
+            <span class="eyebrow">Frage <span id="current-number">1</span> von <span id="total-number">30</span></span>
+            <h2 id="question-title" class="question-title"></h2>
+            <p id="question-text" class="question-text"></p>
+          </div>
+          <div class="progress-meta">
+            <span id="progress-label">0%</span>
+          </div>
+        </div>
+
+        <div class="progress-bar" aria-hidden="true">
+          <div id="progress-fill" class="progress-fill"></div>
+        </div>
+
+        <div id="answers" class="answers"></div>
+
+        <div class="button-row">
+          <button id="prev-btn" class="btn btn-secondary" type="button">Zurück</button>
+          <button id="next-btn" class="btn btn-primary" type="button" disabled>Weiter</button>
+        </div>
+      </section>
+
+      <section id="result-screen" class="card screen">
+        <span class="eyebrow">Auswertung</span>
+        <h2>Dein MINT-Profil</h2>
+        <p class="lead" id="result-summary">
+          Hier siehst du, welche MINT-Bereiche dich besonders ansprechen.
+        </p>
+
+        <div class="result-list">
+          <div class="result-item">
+            <div class="result-head">
+              <span>Mathematik</span>
+              <span id="percent-m">0%</span>
+            </div>
+            <div class="result-bar"><div id="bar-m" class="result-fill"></div></div>
+          </div>
+
+          <div class="result-item">
+            <div class="result-head">
+              <span>Informatik</span>
+              <span id="percent-i">0%</span>
+            </div>
+            <div class="result-bar"><div id="bar-i" class="result-fill"></div></div>
+          </div>
+
+          <div class="result-item">
+            <div class="result-head">
+              <span>Naturwissenschaft</span>
+              <span id="percent-n">0%</span>
+            </div>
+            <div class="result-bar"><div id="bar-n" class="result-fill"></div></div>
+          </div>
+
+          <div class="result-item">
+            <div class="result-head">
+              <span>Technik</span>
+              <span id="percent-t">0%</span>
+            </div>
+            <div class="result-bar"><div id="bar-t" class="result-fill"></div></div>
+          </div>
+        </div>
+
+        <div class="result-box">
+          <h3>Kurze Einordnung</h3>
+          <p id="result-text"></p>
+        </div>
+
+        <div class="button-row">
+          <button id="restart-btn" class="btn btn-primary" type="button">Nochmal starten</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
