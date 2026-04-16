@@ -50,7 +50,7 @@
 
         <div class="feature-grid">
           <div class="feature-box">
-            <strong>30 Zufallsfragen</strong>
+            <strong>15 Zufallsfragen</strong>
             <p>Bei jedem Durchlauf wird eine neue Auswahl aus dem Fragenpool angezeigt.</p>
           </div>
           <div class="feature-box">
@@ -69,7 +69,7 @@
       <section id="quiz-screen" class="card screen" aria-live="polite">
         <div class="quiz-top">
           <div>
-            <span class="eyebrow">Frage <span id="current-number">1</span> von <span id="total-number">30</span></span>
+            <span class="eyebrow">Frage <span id="current-number">1</span> von <span id="total-number">15</span></span>
             <h2 id="question-title" class="question-title"></h2>
             <p id="question-text" class="question-text"></p>
           </div>
@@ -97,39 +97,7 @@
           Hier siehst du, welche MINT-Bereiche dich besonders ansprechen.
         </p>
 
-        <div class="result-list">
-          <div class="result-item">
-            <div class="result-head">
-              <span>Mathematik</span>
-              <span id="percent-m">0%</span>
-            </div>
-            <div class="result-bar"><div id="bar-m" class="result-fill"></div></div>
-          </div>
-
-          <div class="result-item">
-            <div class="result-head">
-              <span>Informatik</span>
-              <span id="percent-i">0%</span>
-            </div>
-            <div class="result-bar"><div id="bar-i" class="result-fill"></div></div>
-          </div>
-
-          <div class="result-item">
-            <div class="result-head">
-              <span>Naturwissenschaft</span>
-              <span id="percent-n">0%</span>
-            </div>
-            <div class="result-bar"><div id="bar-n" class="result-fill"></div></div>
-          </div>
-
-          <div class="result-item">
-            <div class="result-head">
-              <span>Technik</span>
-              <span id="percent-t">0%</span>
-            </div>
-            <div class="result-bar"><div id="bar-t" class="result-fill"></div></div>
-          </div>
-        </div>
+        <div id="result-sections" class="result-sections"></div>
 
         <div class="result-box">
           <h3>Kurze Einordnung</h3>
