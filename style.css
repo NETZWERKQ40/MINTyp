@@ -54,7 +54,7 @@ a {
 }
 
 .logo {
-  max-height: 72px;
+  height: 60px;        /* feste Höhe für beide */
   width: auto;
   object-fit: contain;
 }
@@ -63,6 +63,8 @@ a {
   display: flex;
   gap: 16px;
   align-items: center;
+  justify-content: center;   /* zentriert horizontal */
+  text-align: center;        /* Text mittig */
 }
 
 .brand-badge {
