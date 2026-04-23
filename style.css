@@ -36,13 +36,14 @@ a {
 }
 
 .page-shell {
-  max-width: 1160px;
+  max-width: 940px;
   margin: 0 auto;
   padding: 28px 20px 50px;
 }
 
 .topbar {
-  margin-bottom: 24px;
+  width: 100%;
+  margin: 0 auto 24px;
 }
 
 .logo-row {
@@ -60,8 +61,11 @@ a {
 }
 
 .brand-block {
-  max-width: 940px;
-  margin: 0 auto;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  width: 100%;
+  margin: 0;
 }
 
 .brand-badge {
