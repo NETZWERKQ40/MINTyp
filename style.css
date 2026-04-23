@@ -61,11 +61,11 @@ a {
 }
 
 .logo-left {
-  height: 64px;   /* BWNRW größer */
+  height: 80px;
 }
 
 .logo-right {
-  height: 42px;   /* SW kleiner */
+  height: 42px;
 }
 
 .brand-block {
