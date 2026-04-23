@@ -9,30 +9,16 @@
 <body>
   <div class="page-shell">
     <header class="topbar">
-      <div class="brand">
+      <div class="logo-row">
+        <img src="assets/images/bwnrw-logo.png" alt="BWNRW Logo" class="logo logo-left" />
+        <img src="assets/images/sw-logo.png" alt="SCHULEWIRTSCHAFT NRW Logo" class="logo logo-right" />
+      </div>
+
+      <div class="brand-block">
         <div class="brand-badge">M</div>
         <div>
           <h1>MINT-Kompass: Welcher MINTyp bist du?</h1>
           <p>Entdecke deine Interessen in Mathematik, Informatik, Naturwissenschaften und Technik.</p>
-        </div>
-      </div>
-
-      <div class="icon-row" aria-label="MINT-Bereiche">
-        <div class="icon-card">
-          <span class="icon">∑</span>
-          <span>Mathematik</span>
-        </div>
-        <div class="icon-card">
-          <span class="icon">&lt;/&gt;</span>
-          <span>Informatik</span>
-        </div>
-        <div class="icon-card">
-          <span class="icon">🔬</span>
-          <span>Naturwissenschaft</span>
-        </div>
-        <div class="icon-card">
-          <span class="icon">⚙️</span>
-          <span>Technik</span>
         </div>
       </div>
     </header>
@@ -42,10 +28,13 @@
         <span class="eyebrow">Online-Quiz</span>
         <h2>MINT-Kompass: Welcher MINTyp bist du?</h2>
         <p class="lead">
-          Finde heraus, in welchen MINT-Bereichen (Mathematik, Informatik, Naturwissenschaften, Technik)
-          deine Interessen liegen. Beantworte einfach die Fragen – es gibt kein richtig oder falsch.
-          <br /><br />
-          <strong>Finde deinen MINTyp und entdecke spannende Wege für deine Zukunft!</strong>
+          Finde heraus, in welchen MINT-Bereichen (MINT steht für Mathematik, Informatik,
+          Naturwissenschaften (Biologie, Chemie, Physik) und Technik) deine Interessen und
+          Neigungen liegen. Beantworte einfach die Fragen – es gibt kein richtig oder falsch.
+        </p>
+        <p class="lead">
+          Für die Beantwortung der nachfolgenden Fragen benötigst du max. 10 Minuten und sofort
+          erscheint deine persönliche Auswertung.
         </p>
 
         <div class="feature-grid">
@@ -54,7 +43,7 @@
             <p>Bei jedem Durchlauf wird eine neue Auswahl aus dem Fragenpool angezeigt.</p>
           </div>
           <div class="feature-box">
-            <strong>Faire Verteilung</strong>
+            <strong>Faire Reihenfolge</strong>
             <p>Die Antworten werden pro Frage zufällig gemischt.</p>
           </div>
           <div class="feature-box">
@@ -64,6 +53,12 @@
         </div>
 
         <button id="start-btn" class="btn btn-primary">Quiz starten</button>
+
+        <div class="legal-links">
+          <button class="text-link" data-modal="privacy-modal">Datenschutz</button>
+          <span>•</span>
+          <button class="text-link" data-modal="imprint-modal">Impressum</button>
+        </div>
       </section>
 
       <section id="quiz-screen" class="card screen" aria-live="polite">
@@ -104,11 +99,100 @@
           <p id="result-text"></p>
         </div>
 
-        <div class="button-row">
+        <div class="result-actions">
+          <a
+            class="btn btn-accent"
+            href="https://www.zukunftsindustrie.de/m-e-erleben/berufe/mint-test"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            MINT-Eignungstest
+          </a>
+
           <button id="restart-btn" class="btn btn-primary" type="button">Nochmal starten</button>
+        </div>
+
+        <div class="legal-links legal-links-result">
+          <button class="text-link" data-modal="privacy-modal">Datenschutz</button>
+          <span>•</span>
+          <button class="text-link" data-modal="imprint-modal">Impressum</button>
         </div>
       </section>
     </main>
+  </div>
+
+  <!-- Datenschutz Modal -->
+  <div id="privacy-modal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-card">
+      <div class="modal-head">
+        <h3>Datenschutz</h3>
+        <button class="modal-close" data-close-modal>&times;</button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Datenschutzerklärung für das Tool „MINTyp“</strong></p>
+        <p>Der Schutz Ihrer Daten ist uns wichtig. Das Tool „MINTyp“ wurde so gestaltet, dass es grundsätzlich anonym genutzt werden kann.</p>
+
+        <p><strong>1. Verantwortlicher</strong><br>
+        Verantwortlich für die Datenverarbeitung im Zusammenhang mit diesem Tool ist:<br>
+        Christin Zimmermann<br>
+        E-Mail: <a href="mailto:zimmermann@bwnrw.de">zimmermann@bwnrw.de</a></p>
+
+        <p>Weitere Informationen finden Sie in unserer allgemeinen Datenschutzerklärung:<br>
+        <a href="https://bwnrw.de/kontakt/datenschutzerklaerung/" target="_blank" rel="noopener noreferrer">https://bwnrw.de/kontakt/datenschutzerklaerung/</a></p>
+
+        <p><strong>2. Anonyme Nutzung</strong><br>
+        Die Nutzung des Tools „MINTyp“ ist grundsätzlich ohne Angabe personenbezogener Daten möglich.<br>
+        Es werden durch die Nutzung des Tools selbst keine personenbezogenen Daten aktiv erhoben, gespeichert oder verarbeitet.</p>
+
+        <p><strong>3. Technische Zugriffsdaten</strong><br>
+        Beim Aufruf der Seite können durch den Hosting-Anbieter automatisch technische Informationen erfasst werden (z. B. IP-Adresse, Datum und Uhrzeit des Zugriffs, Browsertyp). Diese Daten sind technisch erforderlich, um die Website bereitzustellen und die Stabilität sowie Sicherheit zu gewährleisten.</p>
+
+        <p><strong>4. Hosting</strong><br>
+        Das Tool wird über GitHub Pages bereitgestellt. Dabei kann nicht ausgeschlossen werden, dass technische Zugriffsdaten durch GitHub (GitHub Inc., USA) verarbeitet werden.</p>
+
+        <p>Weitere Informationen finden Sie in der Datenschutzerklärung von GitHub:<br>
+        <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener noreferrer">https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement</a></p>
+
+        <p><strong>5. Externe Links</strong><br>
+        Dieses Tool kann Links zu externen Websites enthalten. Für die Inhalte dieser externen Seiten sind ausschließlich deren Betreiber verantwortlich.</p>
+
+        <p><strong>6. Ihre Rechte</strong><br>
+        Sofern im Einzelfall personenbezogene Daten verarbeitet werden, stehen Ihnen die Rechte aus der DSGVO zu, insbesondere:
+        Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung und Widerspruch. Zudem haben Sie das Recht, sich bei einer Datenschutzaufsichtsbehörde zu beschweren.</p>
+
+        <p><strong>7. Ergänzende Datenschutzerklärung</strong><br>
+        Ergänzend gilt unsere allgemeine Datenschutzerklärung:<br>
+        <a href="https://bwnrw.de/kontakt/datenschutzerklaerung/" target="_blank" rel="noopener noreferrer">https://bwnrw.de/kontakt/datenschutzerklaerung/</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Impressum Modal -->
+  <div id="imprint-modal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-card">
+      <div class="modal-head">
+        <h3>Impressum</h3>
+        <button class="modal-close" data-close-modal>&times;</button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Herausgeber</strong></p>
+        <p>Bildungswerk der Nordrhein-Westfälischen Wirtschaft e. V. (BWNRW)<br>
+        SCHULEWIRTSCHAFT NRW</p>
+
+        <p><strong>Redaktion und Umsetzung</strong><br>
+        Christin Zimmermann</p>
+
+        <p><strong>Mitarbeit an dieser Ausgabe</strong><br>
+        Dr. Heike Hunecke<br>
+        Dr. Wasilios Rodoniklis</p>
+
+        <p><strong>Bildnachweis</strong><br>
+        Alle im Tool verwendeten Icons wurden vom Bildungswerk der Nordrhein-Westfälischen Wirtschaft e. V. (BWNRW) mit Unterstützung der KI-Plattform ChatGPT erstellt.</p>
+
+        <p><strong>Hinweis zur Nutzung von Künstlicher Intelligenz</strong><br>
+        Dieses Tool wurde unter Einsatz von Künstlicher Intelligenz (KI) entwickelt und gestaltet. Inhalte und Funktionen wurden teilweise KI-gestützt erstellt und anschließend redaktionell geprüft.</p>
+      </div>
+    </div>
   </div>
 
   <script src="script.js"></script>
