@@ -55,9 +55,9 @@ a {
 }
 
 .logo {
-  height: 60px;        /* feste Höhe für beide */
   width: auto;
   object-fit: contain;
+  display: block;
 }
 
 .brand-block {
