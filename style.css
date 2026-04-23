@@ -54,17 +54,14 @@ a {
 }
 
 .logo {
-  height: 60px;        /* feste Höhe für beide */
+  height: 40px;        /* feste Höhe für beide */
   width: auto;
   object-fit: contain;
 }
 
 .brand-block {
-  display: flex;
-  gap: 16px;
-  align-items: center;
-  justify-content: center;   /* zentriert horizontal */
-  text-align: center;        /* Text mittig */
+  max-width: 940px;
+  margin: 0 auto;
 }
 
 .brand-badge {
