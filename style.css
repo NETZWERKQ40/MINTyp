@@ -59,6 +59,13 @@ a {
   object-fit: contain;
   display: block;
 }
+.logo-left {
+  height: 64px;   /* BWNRW größer */
+}
+
+.logo-right {
+  height: 42px;   /* SW kleiner */
+}
 
 .brand-block {
   display: flex;
